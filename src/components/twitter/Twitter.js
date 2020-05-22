@@ -116,6 +116,8 @@ export const Twitter = ({ onChange, onSwatchHover, hex, colors, width, triangle,
       hex: hexcode,
       source: 'hex',
     }, e)
+    console.log("asdf");
+    
   }
 
   return (
