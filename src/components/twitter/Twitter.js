@@ -4,7 +4,6 @@ import reactCSS from 'reactcss'
 import map from 'lodash/map'
 import merge from 'lodash/merge'
 import color from '../../helpers/color'
-import { red, pink, purple, indigo, blue, cyan, teal, green, lightGreen, yellow, amber, orange } from 'material-colors'
 
 import { ColorWrap, EditableInput, Swatch } from '../common'
 
@@ -127,6 +126,12 @@ export const Twitter = ({ onChange, onSwatchHover, hex, colors, width, triangle,
       <div style={ styles.triangle } />
 
       <div style={ styles.body }>
+        <Swatch 
+          color={'transparent'}
+          style={styles.swatch}
+          onClick={handleChange}
+          onHover={onSwatchHover}
+        />
         { map(colors, (c, i) => {
           return (
             <Swatch
@@ -164,10 +169,8 @@ Twitter.propTypes = {
 
 Twitter.defaultProps = {
   width: 276,
-  // colors: ['#FF6900', '#FCB900', '#7BDCB5', '#00D084', '#8ED1FC', '#0693E3',
-  //   '#ABB8C3', '#EB144C', '#F78DA7', '#9900EF'],
-  colors: [orange[500], red[500], pink[500], amber[500], indigo[500], purple[500],
-    blue[500], cyan[500], teal[500], green[500], lightGreen[500], yellow[500]],
+  colors: ['#FF6900', '#FCB900', '#7BDCB5', '#00D084', '#8ED1FC', '#0693E3',
+    '#ABB8C3', '#EB144C', '#F78DA7', '#9900EF'],
   triangle: 'top-left',
   styles: {},
 }
