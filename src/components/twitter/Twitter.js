@@ -112,12 +112,10 @@ export const Twitter = ({ onChange, onSwatchHover, hex, colors, width, triangle,
   })
 
   const handleChange = (hexcode, e) => {
-    color.isValidHex(hexcode) && onChange({
+    (color.isValidHex(hexcode) || hexcode === 'transparent') && onChange({
       hex: hexcode,
       source: 'hex',
     }, e)
-    console.log("asdf");
-    
   }
 
   return (
